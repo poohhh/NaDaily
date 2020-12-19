@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "947736966140",
+    "project_id": "nadaily-8b197",
+    "storage_bucket": "nadaily-8b197.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947736966140:android:05b10485039aabbf8af879",
+        "android_client_info": {
+          "package_name": "kr.kerri.nadaily"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947736966140-q1hd5fol7pv8g7cbleo27ph4c1s9fr3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqf5R6ng5FaDoNX60C7mtnPbiqBumnLwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947736966140-q1hd5fol7pv8g7cbleo27ph4c1s9fr3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
