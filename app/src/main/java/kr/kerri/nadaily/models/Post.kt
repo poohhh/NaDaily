@@ -11,6 +11,7 @@ data class Post(
     var author: String? = "",
     var title: String? = "",
     var body: String? = "",
+    var date: String? = "",
     var heartCount: Int = 0,
     var hearts: MutableMap<String, Boolean> = HashMap()
 ) {
@@ -23,6 +24,7 @@ data class Post(
             "author" to author,
             "title" to title,
             "body" to body,
+             "date" to date,
             "heartCount" to heartCount,
             "hearts" to hearts
         )

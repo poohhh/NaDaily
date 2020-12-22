@@ -10,14 +10,16 @@ import kr.kerri.nadaily.models.Post
 class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val postTitle: TextView = itemView.findViewById(R.id.postTitle)
     private val postAuthor: TextView = itemView.findViewById(R.id.postAuthor)
-    private val postNumStars: TextView = itemView.findViewById(R.id.postNumHearts)
+    private val postTime: TextView = itemView.findViewById(R.id.postTime)
+    private val postNumHearts: TextView = itemView.findViewById(R.id.postNumHearts)
     private val postBody: TextView = itemView.findViewById(R.id.postBody)
     private val heart: ImageView = itemView.findViewById(R.id.heart)
 
     fun bindToPost(post: Post, starClickListener: View.OnClickListener) {
         postTitle.text = post.title
         postAuthor.text = post.author
-        postNumStars.text = post.heartCount.toString()
+        postTime.text = post.date
+        postNumHearts.text = post.heartCount.toString()
         postBody.text = post.body
 
         heart.setOnClickListener(starClickListener)

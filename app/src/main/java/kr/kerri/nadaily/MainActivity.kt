@@ -22,7 +22,7 @@ class MainActivity : BaseActivity() {
     private lateinit var pagerAdapter: FragmentPagerAdapter
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var googleSignInClient: GoogleSignInClient
+//    private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

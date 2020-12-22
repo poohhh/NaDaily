@@ -14,6 +14,7 @@ import com.google.firebase.ktx.Firebase
 import kr.kerri.nadaily.databinding.ActivityNewPostBinding
 import kr.kerri.nadaily.models.Post
 import kr.kerri.nadaily.models.User
+import java.util.*
 
 class NewPostActivity : BaseActivity() {
 
@@ -37,6 +38,12 @@ class NewPostActivity : BaseActivity() {
     private fun submitPost() {
         val title = binding.fieldTitle.text.toString()
         val body = binding.fieldBody.text.toString()
+
+        val formatter = java.text.SimpleDateFormat("yyyy/MM/dd_HH:mm:ss", Locale.KOREAN)
+
+        val current = Date()
+        val date = formatter.format(current)
+//        val date =
         Log.i("title", title)
         // Title is required
         if (TextUtils.isEmpty(title)) {
@@ -72,7 +79,7 @@ class NewPostActivity : BaseActivity() {
                             Toast.LENGTH_SHORT).show()
                     } else {
                         // Write new post
-                        writeNewPost(userId, user.username.toString(), title, body)
+                        writeNewPost(userId, user.username.toString(), title, body, date)
                     }
 
                     // Finish this Activity, back to the stream
@@ -104,7 +111,7 @@ class NewPostActivity : BaseActivity() {
     }
 
     // [START write_fan_out]
-    private fun writeNewPost(userId: String, username: String, title: String, body: String) {
+    private fun writeNewPost(userId: String, username: String, title: String, body: String, date: String) {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
         val key = database.child("posts").push().key
@@ -113,7 +120,7 @@ class NewPostActivity : BaseActivity() {
             return
         }
 
-        val post = Post(userId, username, title, body)
+        val post = Post(userId, username, title, body, date)
         val postValues = post.toMap()
 
         val childUpdates = hashMapOf<String, Any>(

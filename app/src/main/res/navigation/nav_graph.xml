@@ -14,9 +14,5 @@
 
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
-    <activity
-        android:id="@+id/newPostActivity"
-        android:name="kr.kerri.nadaily.NewPostActivity"
-        android:label="NewPostActivity" />
 
 </navigation>

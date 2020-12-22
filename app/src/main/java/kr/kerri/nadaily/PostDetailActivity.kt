@@ -23,7 +23,7 @@ import kr.kerri.nadaily.databinding.ActivityPostDetailBinding
 import kr.kerri.nadaily.models.Comment
 import kr.kerri.nadaily.models.Post
 import kr.kerri.nadaily.models.User
-import java.util.ArrayList
+import java.util.*
 
 class PostDetailActivity : BaseActivity(), View.OnClickListener {
 
@@ -70,6 +70,7 @@ class PostDetailActivity : BaseActivity(), View.OnClickListener {
                 // [START_EXCLUDE]
                 post?.let {
                     binding.postAuthorLayout.postAuthor.text = it.author
+                    binding.postAuthorLayout.postTime.text = it.date
                     with(binding.postTextLayout) {
                         postTitle.text = it.title
                         postBody.text = it.body
@@ -132,7 +133,12 @@ class PostDetailActivity : BaseActivity(), View.OnClickListener {
 
                     // Create new comment object
                     val commentText = binding.fieldCommentText.text.toString()
-                    val comment = Comment(uid, authorName, commentText)
+
+                    val formatter = java.text.SimpleDateFormat("yyyy/MM/dd_HH:mm:ss", Locale.KOREAN)
+
+                    val current = Date()
+                    val date = formatter.format(current)
+                    val comment = Comment(uid, authorName, commentText, date)
 
                     // Push the comment, it will appear in the list
                     commentsReference.push().setValue(comment)
@@ -151,6 +157,9 @@ class PostDetailActivity : BaseActivity(), View.OnClickListener {
         fun bind(comment: Comment) {
             itemView.findViewById<TextView>(R.id.commentAuthor).text = comment.author
             itemView.findViewById<TextView>(R.id.commentBody).text = comment.text
+            itemView.findViewById<TextView>(R.id.commentTime).text = comment.date
+
+
         }
     }
 

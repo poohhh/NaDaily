@@ -7,6 +7,7 @@ import com.google.firebase.database.IgnoreExtraProperties
 data class Comment(
     var uid: String? = "",
     var author: String? = "",
-    var text: String? = ""
+    var text: String? = "",
+    var date: String? = ""
 )
 // [END comment_class]

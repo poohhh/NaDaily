@@ -19,7 +19,7 @@
             android:layout_alignParentLeft="true" />
 
         <LinearLayout
-            android:id="@+id/starLayout"
+            android:id="@+id/heartLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/postAuthorLayout"
